@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  googleMapsKey: 'AIzaSyCqlpSwCSbpY0jQREvx6ui4sc-QTNbCqLY',
+  openWeatherApiKey: 'ac8c3bedb80bb831bc82c14947790148',
+
+  firebaseConig: {
+      apiKey: 'AIzaSyCWzWuJ1Bxvn91S4mDPyJ1guCxZzSHL2P8',
+      authDomain: 'weatherapp-bysid.firebaseapp.com',
+      databaseURL: 'https://weatherapp-bysid.firebaseio.com',
+      projectId: 'weatherapp-bysid',
+      storageBucket: '',
+      messagingSenderId: '757015944531',
+      appId: '1:757015944531:web:b62d92942e35308b'
+    }
 };
 
 /*

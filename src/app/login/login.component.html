@@ -1,0 +1,46 @@
+<div class="mainContainer">
+        <div class="loginCard">
+            <main class="loginContent">
+                
+                <div *ngIf="auth.user$ | async; then authenticated else guest">
+                        <!-- template will replace this div -->
+                    </div>
+                <ng-template #guest>
+                        <span class="loginHead log">Welcome</span>
+                        <span class="appInfo">Get Real time Weather Updates from 200+ cities across the globe</span>
+                    <div class="guest">                                    
+                        <button class="btn2" (click)="auth.googleSignin()">
+                             Login With Google
+                        </button>
+                    </div>                        
+                </ng-template>
+                <div class="log">
+                    <ng-template #authenticated>
+                        <div *ngIf="auth.user$ | async as user">
+                            <span class="head">Welcome</span>
+                            <span class="loggedUser">{{ user.displayName }}</span>
+                        </div>
+                        <button class="btn2" (click)="nav()">Click to Continue</button>
+                        <br>
+                        <span class="appInfo">Or</span>
+                        <button class="btn2" (click)="auth.signOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Sign Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            
+                    </ng-template>
+                </div>
+                
+                
+                        
+                        
+                        <!-- User logged in -->
+                        
+            </main>
+            <aside class="loginSide">
+                <div class="loginSideOVerlay"></div>        
+            </aside>
+     </div>
+        
+</div>
+     
+
+

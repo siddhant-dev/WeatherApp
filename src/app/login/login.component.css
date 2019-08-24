@@ -1,0 +1,141 @@
+
+
+.mainContainer{
+    min-height: 97vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.loginCard{
+    position: relative;
+    display: flex;
+    width: 85%;
+    min-height: 80vh;
+    background: #E0CFFD;
+    justify-content: center;
+    align-content: center;
+    border-radius: 30px ;
+    /* 0px 0px 80px; */
+}
+
+.loginHead{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5em;
+    /* line-height: 2em; */
+    margin-bottom: .5em;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #013583;
+    display: block;
+
+}
+.head{
+    font-family: Montserrat;
+    font-size: 2em;
+    align-items: center;
+    text-align: center;
+    color: #013583;
+    display: block;
+}
+.loginContent{
+    flex: 1.6;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.loggedUser{
+    animation: fade 1s ease-in-out;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5em;
+    /* line-height: 2em; */
+    margin-bottom: .5em;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #013583;
+    display: block;
+}
+
+.appInfo{
+    /* flex: 2 2 */
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.8em;
+    line-height: 2em;
+    /* margin-top: 2em; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: #0F0645;
+
+}
+.btn2{
+    background: #7746DE;
+    box-shadow: 6px 6px 4px rgba(83, 45, 191, 0.32);
+    padding: 1rem;
+  /* border-radius: 2rem; */
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  animation: fadein 1s ease-in-out;
+  /* width: 90%; */
+    /* border-radius: 2rem; */
+   
+}
+.loginSide{
+    flex: 3 3;
+    display: flex;
+    flex-flow: column; 
+    justify-content: flex-end;
+    min-height: 100%;
+    background: url(../../assets/image.jpg);
+    background-size: cover;
+    mix-blend-mode: normal;
+    border-radius: 0px 30px 30px 0px;
+    
+    position: relative;
+
+    
+}
+
+@media screen and (max-width: 959px) {
+    .loginSide {
+      display: none;
+    }
+  }
+/* .loginSideOverlay{
+    position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0 10px 10px 0;
+} */
+
+
+/* Rectangle 3 */
+
+
