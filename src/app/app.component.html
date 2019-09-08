@@ -1,1 +1,51 @@
-<router-outlet></router-outlet>
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+        <!-- template will replace this div -->
+    </div>
+
+<ng-template #authenticated>
+        <nav class="navbar  is-dark" role="navigation" aria-label="main navigation" >
+                <div class="navbar-brand center">
+                  <a class="navbar-item" routerLink="/home">
+                    LiveWeather
+                    <svg width="30" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="10" cy="10" rx="10" ry="10" fill="#FFDE17"/>
+                        </svg>
+                  </a>
+              
+                  <a role="button" class="navbar-burger " [ngClass]="{'burger| is-active': showMenu}" aria-label="menu" aria-expanded="false" 
+                  (click)="toggleMenu()">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+                </div>
+              
+                <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': showMenu}">
+                  <div class="navbar-start">
+                    <a class="navbar-item">
+                      Add Cities
+                    </a>
+              
+                    
+                  </div>
+              
+                  <div class="navbar-end">
+                    <div class="navbar-item">
+                      <div class="buttons">
+                        <a class="button ">
+                          <strong>Sign Out</strong>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+</ng-template>
+
+
+
+<div>
+  
+  
+        <router-outlet></router-outlet>
+</div>

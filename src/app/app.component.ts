@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 
 @Component({
@@ -8,6 +9,15 @@ import { Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Weather App';
+  showMenu = false;
+
+  constructor(public auth: AuthService) {}
+
   ngOnInit() {}
 
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
 }
+

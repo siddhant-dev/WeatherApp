@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  private nav(){
-    this.router.navigateByUrl('/home');
-  }
+  // console.log(this.auth.googleSignin());
+
+
 }

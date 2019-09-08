@@ -17,10 +17,10 @@
                 <div class="log">
                     <ng-template #authenticated>
                         <div *ngIf="auth.user$ | async as user">
-                            <span class="head">Welcome</span>
+                            <span class="head">Welcome Back</span>
                             <span class="loggedUser">{{ user.displayName }}</span>
                         </div>
-                        <button class="btn2" (click)="nav()">Click to Continue</button>
+                        <button class="btn2" routerLink="/home">Click to Continue</button>
                         <br>
                         <span class="appInfo">Or</span>
                         <button class="btn2" (click)="auth.signOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

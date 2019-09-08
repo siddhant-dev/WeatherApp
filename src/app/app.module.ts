@@ -11,12 +11,17 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { WeatherCardComponent } from './ui/weather-card/weather-card.component';
+import { AddCityComponent } from './add-city/add-city.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    WeatherCardComponent,
+    AddCityComponent,
   ],
   imports: [
     BrowserModule,

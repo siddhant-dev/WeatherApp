@@ -1,0 +1,37 @@
+<div class="add-wrapper">
+     <section class="main-card">
+         <div class="search-wrapper">
+             <div class="search-header">
+                    <h3 class = "search-title">Search Locations</h3>
+                    <div class="input-wrapper">
+                            <input type="text" (keydown.enter)="$event.preventDefault()" placeholder="Search Location" 
+                            autocorrect="on" autocapitalize="on" spellcheck="off" type="text" #search class="search-input">
+                            <button class="search-city-btn" (click)="setCurrentLocation()">
+                                    <span class="material-icons">
+                                            my_location
+                                            </span> <span class="text-btn">Locate Me</span>
+                                  </button>
+                    </div>
+
+             </div>
+             <div class="search-map" *ngIf="latitude">
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                    (dragEnd)="markerDragEnd($event)">
+                </agm-marker>
+                </agm-map>
+                <!-- <br> -->
+                <span *ngIf="address">Street Address: {{address}}</span>
+             </div>
+             
+             
+
+         </div>
+        
+         <div class="card-wrapper" *ngIf = "latitude">
+             
+             <app-weather-card [lat]="latitude" [lng]="longitude"></app-weather-card>
+         </div>
+    </section>
+        
+</div>
