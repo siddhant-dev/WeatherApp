@@ -2,8 +2,8 @@
         <!-- template will replace this div -->
     </div>
 
-<ng-template #authenticated>
-        <nav class="navbar  is-dark" role="navigation" aria-label="main navigation" >
+<ng-template #authenticated >
+        <nav class="navbar  bg-col is-dark is-fixed-top" role="navigation" aria-label="main navigation" >
                 <div class="navbar-brand center">
                   <a class="navbar-item" routerLink="/home">
                     LiveWeather
@@ -12,8 +12,8 @@
                         </svg>
                   </a>
               
-                  <a role="button" class="navbar-burger " [ngClass]="{'burger| is-active': showMenu}" aria-label="menu" aria-expanded="false" 
-                  (click)="toggleMenu()">
+                  <a role="button" class="navbar-burger " [ngClass]="{'burger| is-active': showMenu}" aria-label="menu" aria-expanded="true" 
+                  (click)="toggleMenu()"  >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -22,7 +22,7 @@
               
                 <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': showMenu}">
                   <div class="navbar-start">
-                    <a class="navbar-item">
+                    <a class="navbar-item" routerLink = "add">
                       Add Cities
                     </a>
               
@@ -32,7 +32,7 @@
                   <div class="navbar-end">
                     <div class="navbar-item">
                       <div class="buttons">
-                        <a class="button ">
+                        <a class="button is-black" (click) = "auth.signOut()">
                           <strong>Sign Out</strong>
                         </a>
                       </div>
@@ -44,7 +44,7 @@
 
 
 
-<div>
+<div (click)="showMenu = false" class = "over">
   
   
         <router-outlet></router-outlet>

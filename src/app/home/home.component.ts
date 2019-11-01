@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,15 @@ import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core
 })
 export class HomeComponent implements OnInit {
 
-  constructor(  ) { }
+  cities: Array<string>;
+
+  constructor( public auth: AuthService  ) { }
 
 
-  ngOnInit() {    // load Places Autocomplete
+  ngOnInit() {   // load Places Autocomplete
+    this.auth.user$.subscribe(payload =>(
+      this.cities = payload.cities
+    ));
   }
 
 }

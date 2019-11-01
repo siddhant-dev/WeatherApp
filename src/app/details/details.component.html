@@ -1,0 +1,93 @@
+<div class="details-wrapper">
+    <svg class="back__button" routerLink="/home" viewBox="4085 152 98.5 126" tabindex="0">
+        <defs>
+          <style>.a {
+            fill: #0B1D28;
+          }
+    
+          .b {
+            fill: rgba(0, 0, 0, 0);
+          }
+    
+          .b, .c {
+            stroke: #fff;
+            stroke-width: 2px;
+          }
+    
+          .c {
+            fill: none;
+          }
+    
+          .d {
+            fill: #fff;
+            font-size: 15px;
+            font-family: SegoeUI, Segoe UI, sans-serif;
+            letter-spacing: 0.4em;
+          }</style>
+        </defs>
+        <g transform="translate(3980)">
+          <circle class="a" cx="39" cy="39" r="39" transform="translate(105 152)"></circle>
+          <line class="b" transform="translate(123.5 190.5)" x1="80"></line>
+          <line class="b" transform="translate(123.5 164.5)" x2="26" y1="26"></line>
+          <line class="c" transform="translate(123.5 190.5)" x1="26" y1="27"></line>
+          <text class="d" transform="translate(117 274)">
+            <tspan x="0" y="0">BACK</tspan>
+          </text>
+        </g>
+      </svg>
+      <section class="main-card">
+          <section class="card-container">
+              <img src="../../assets/Back.png" alt="city" class="city-illus">
+              <div class="header-container">
+                <div class="today-container">
+                    <div class="today-conditons">
+                        <span class="temp-text">25</span>
+                        <span class="temp-state">Clear</span>
+                    </div>
+                    <div class="humid-wind-container">
+                        <div class="hum-container">
+                            <span class="hum">Humidity:  50%{{hum}}</span>
+                        </div>
+                        
+                        <div class="wind-container">
+                            <span class="wind">Wind:  10{{wind}}Km/h</span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="city-container">
+                    <div class="city-name">
+                        <span class="city">{{city}}</span>
+                        <span class="city">, {{country}}</span>
+                    </div>
+                  </div>
+              </div>
+          </section>
+          <main class="body-container">
+              <section class="forcast-container">
+                   <div class="day-container">
+                      <span class="day-text" >Mon</span>
+                      <div class="weather-icon" [ngSwitch]="true">
+                        <img *ngSwitchCase="state == 'Sunny'|| state == 'Clear'" src="../../../assets/svg icons/Sunny.svg" alt="sunny">
+                        <img *ngSwitchCase = "desc == 'overcast clouds' || desc == 'scattered clouds' || 
+                        desc == 'broken clouds'" src = "../../../assets/svg icons/Scattered Clouds.svg" alt="Clouds">
+                        <img *ngSwitchCase = "desc == 'few clouds' || desc == 'cloudy'" 
+                        src="../../../assets/svg icons/few clouds.svg" alt="Clouds" >
+                        <img *ngSwitchCase = "state == 'Fog' || state == 'Haze' || state == 'Smoke' " 
+                        src="../../../assets/svg icons/mist.svg" alt="Haze">
+                        <img *ngSwitchCase = "state === 'Storm' || state === 'Thunderstorm'" 
+                        src="../../../assets/svg icons/Thunderstrom.svg" alt="Thunderstrom">
+                        <img *ngSwitchCase = "state == 'Drizzle' || state == 'Mist'" 
+                        src="../../../assets/svg icons/Light Rain.svg" alt="Light Rain">
+                        <img *ngSwitchCase = "state == 'Rain'" 
+                         src="../../../assets/svg icons/Rain.svg" alt="Rain">
+                         <img *ngSwitchCase = "state == 'Snow' || state == 'Hail'" src="../../../assets/svg icons/Snow.svg" alt="Snow">
+                    
+                    </div>
+                    <span class="day-temp">34</span>
+                    <span class="day-state">Haze</span>
+
+                  </div>
+              </section>
+          </main>
+      </section>
+</div>

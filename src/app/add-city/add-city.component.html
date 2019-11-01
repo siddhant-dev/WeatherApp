@@ -2,11 +2,11 @@
      <section class="main-card">
          <div class="search-wrapper">
              <div class="search-header">
-                    <h3 class = "search-title">Search Locations</h3>
+                    <h3 class = "search-title">Search Cities</h3>
                     <div class="input-wrapper">
-                            <input type="text" (keydown.enter)="$event.preventDefault()" placeholder="Search Location" 
-                            autocorrect="on" autocapitalize="on" spellcheck="off" type="text" #search class="search-input">
-                            <button class="search-city-btn" (click)="setCurrentLocation()">
+                            <input type="text" (keydown.enter)="$event.preventDefault()" placeholder="Search Cities" 
+                            autocorrect="on" autocapitalize="on" spellcheck="on" #search class="search-input">
+                            <button class="search-city-btn" (click)="setCurrentLocation()" >
                                     <span class="material-icons">
                                             my_location
                                             </span> <span class="text-btn">Locate Me</span>
@@ -15,22 +15,22 @@
 
              </div>
              <div class="search-map" *ngIf="latitude">
-                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [styles]="mapStyle">
                     <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
-                    (dragEnd)="markerDragEnd($event)">
+                    (dragEnd)="markerDragEnd($event)" [iconUrl]=iconStyle>
                 </agm-marker>
                 </agm-map>
                 <!-- <br> -->
-                <span *ngIf="address">Street Address: {{address}}</span>
+                <span class="address" *ngIf="address">Street Address: {{address}}</span>
              </div>
              
              
 
          </div>
         
-         <div class="card-wrapper" *ngIf = "latitude">
+         <div class="card-wrapper" *ngIf = "city">
              
-             <app-weather-card [lat]="latitude" [lng]="longitude"></app-weather-card>
+             <app-weather-card [city]="city" [addMode]="true"></app-weather-card>
          </div>
     </section>
         

@@ -1,3 +1,9 @@
-.today{
-    margin-left: 550px;   
-}
+.main__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    position: relative;
+    margin-top: 5rem;
+  }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { first, map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { first, map, catchError } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -10,12 +10,32 @@ import { environment } from '../environments/environment';
 export class WeatherService {
 
   apiKey = environment.openWeatherApiKey;
-  baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
+  baseURL = 'https://api.openweathermap.org/data/2.5/';
 
   constructor(public http: HttpClient) {  }
 
-  getWeather(lat, lng): Observable<any> {
+  getWeather(city, country): Observable<any> {
     return this.http.get  (
-        this.baseURL + 'lat=' + lat + '&lon=' + lng + '&appid=' + this.apiKey).pipe((first()));
+        this.baseURL + 'weather?q=' + city + ',' + country + '&units=metric&appid=' + this.apiKey).pipe((first()),
+        catchError(this.handleError));
+  }
+
+  getForcast(city, country): Observable<any> {
+    return this.http.get<any>(this.baseURL + 'forecast?q=' + city + ',' + country + '&units=metric&appid=' +
+    this.apiKey).pipe(map(weather => {
+      return weather.list;
+    }),
+    catchError(this.handleError));
+  }
+
+  private handleError(err: HttpErrorResponse) {
+    let message = '';
+    if (err.error instanceof Error){
+      message = err.error.message;
+    } else{
+      message = err.error.message;
+    }
+    return throwError(message);
+    
   }
 }

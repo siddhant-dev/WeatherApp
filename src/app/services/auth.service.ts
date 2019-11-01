@@ -47,7 +47,8 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      // cities: user.cities
     };
 
     return userRef.set(data, { merge: true });
@@ -59,7 +60,21 @@ export class AuthService {
     this.router.navigate(['/']);
   }
 
+  public addCity(city, uid) {
+
+    const cityRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${uid}`);
+    const data = {
+      cities: city
+    };
+    cityRef.set(data, { merge: true });
+  }
 
 
-
+  // public getCities() {
+  //   let cities: Array<string>;
+  //   this.user$.subscribe(payload => (
+  //     cities = payload.cities
+  //   ));
+  //   return cities;
+  // }
 }

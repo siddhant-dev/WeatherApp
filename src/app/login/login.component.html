@@ -9,13 +9,13 @@
                         <span class="loginHead log">Welcome</span>
                         <span class="appInfo">Get Real time Weather Updates from 200+ cities across the globe</span>
                     <div class="guest">                                    
-                        <button class="btn2" (click)="auth.googleSignin()">
+                        <button class="button is-info" (click)="auth.googleSignin()">
                              Login With Google
                         </button>
                     </div>                        
                 </ng-template>
                 <div class="log">
-                    <ng-template #authenticated>
+                    <!-- <ng-template #authenticated>
                         <div *ngIf="auth.user$ | async as user">
                             <span class="head">Welcome Back</span>
                             <span class="loggedUser">{{ user.displayName }}</span>
@@ -26,7 +26,7 @@
                         <button class="btn2" (click)="auth.signOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Sign Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                             
-                    </ng-template>
+                    </ng-template> -->
                 </div>
                 
                 

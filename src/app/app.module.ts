@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { WeatherCardComponent } from './ui/weather-card/weather-card.component';
 import { AddCityComponent } from './add-city/add-city.component';
+import { ErrorComponent } from './ui/error/error.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { AddCityComponent } from './add-city/add-city.component';
     HomeComponent,
     WeatherCardComponent,
     AddCityComponent,
+    ErrorComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
