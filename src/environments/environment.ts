@@ -9,13 +9,13 @@ export const environment = {
   openWeatherApiKey: 'ac8c3bedb80bb831bc82c14947790148',
 
   firebaseConig: {
-    apiKey: 'AIzaSyCWzWuJ1Bxvn91S4mDPyJ1guCxZzSHL2P8',
-    authDomain: 'weatherapp-bysid.firebaseapp.com',
-    databaseURL: 'https://weatherapp-bysid.firebaseio.com',
-    projectId: 'weatherapp-bysid',
-    storageBucket: 'weatherapp-bysid.appspot.com',
-    messagingSenderId: '757015944531',
-    appId: '1:757015944531:web:b62d92942e35308b'
+    apiKey: 'AIzaSyByh82-KylELTjfyMFzqyI7msxOkM1rmKs',
+    authDomain: 'liveweatherforcast.firebaseapp.com',
+    databaseURL: 'https://liveweatherforcast.firebaseio.com',
+    projectId: 'liveweatherforcast',
+    storageBucket: 'liveweatherforcast.appspot.com',
+    messagingSenderId: '604410489018',
+    appId: '1:604410489018:web:37347875484f4229b4fa83'
     }
 };
 

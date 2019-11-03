@@ -24,11 +24,14 @@ export class WeatherCardComponent implements OnInit {
   btnText: string;
   errorMessage: string;
 
+
+  // @Input() cityAdded: boolean;
   @Input() addMode: boolean;
   @Input() set city(city: Locations) {
     this.errorMessage = '';
     // this.lat = Math.ceil(this.lat);
     // lng = Math.ceil(lng);
+
     this.weather.getWeather(city.name, city.country).subscribe  ( (payload: any) => {
       this.temp = Math.ceil(payload.main.temp);
       this.state = payload.weather[0].main;
@@ -36,7 +39,7 @@ export class WeatherCardComponent implements OnInit {
       this.tempMax = Math.ceil(payload.main.temp_max );
       this.name = payload.name;
       this.desc = payload.weather[0].description;
-      this.country = city.country;
+      this.country = payload.sys.country;
   },
     err => (
       console.log(err),
@@ -52,6 +55,7 @@ export class WeatherCardComponent implements OnInit {
           // console.log(i.main.temp);
           this.tempMax = i.main.temp > this.tempMax ? Math.round(i.main.temp) : this.tempMax;
           this.tempMin = i.main.temp < this.tempMin ? Math.round(i.main.temp) : this.tempMin  ;
+          // this.cityAdded = false;
         }
       }
     },
@@ -87,10 +91,11 @@ export class WeatherCardComponent implements OnInit {
     } else if (this.list[index].country !== country) {
       this.list.push({name , country});
     }
+    // this.cityAdded = true;
   }
 
   openDetails(){
-    if( !this.addMode ) {
+    if ( !this.addMode ) {
       this.route.navigateByUrl('/details/' + this.name + '/' + this.country );
     }
   }

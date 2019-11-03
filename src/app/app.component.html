@@ -41,11 +41,12 @@
                 </div>
               </nav>
 </ng-template>
+<ng-template #guest></ng-template>
 
 
 
-<div (click)="showMenu = false" class = "over">
+<main [@routeAnimations]="prepareRoute(outlet)" (click)="showMenu = false" class = "over"  >
   
   
-        <router-outlet></router-outlet>
-</div>
+        <router-outlet #outlet="outlet"></router-outlet>
+</main>

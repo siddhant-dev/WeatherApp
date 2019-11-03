@@ -1,14 +1,15 @@
 <section class="weather-card" (click) = "openDetails()">
     <span class="city-name">{{name}}, {{country}}</span>
-    <span style="display: none;">{{country}}</span>
     <div class="weather-icon" [ngSwitch]="true">
             <img *ngSwitchCase="state == 'Sunny'|| state == 'Clear'" src="../../../assets/svg icons/Sunny.svg" alt="sunny">
             <img *ngSwitchCase = "desc == 'overcast clouds' || desc == 'scattered clouds' || 
             desc == 'broken clouds'" src = "../../../assets/svg icons/Scattered Clouds.svg" alt="Clouds">
             <img *ngSwitchCase = "desc == 'few clouds' || desc == 'cloudy'" 
             src="../../../assets/svg icons/few clouds.svg" alt="Clouds" >
-            <img *ngSwitchCase = "state == 'Fog' || state == 'Haze' || state == 'Smoke' " 
+            <img *ngSwitchCase = "state == 'Fog' || state == 'Haze'" 
             src="../../../assets/svg icons/mist.svg" alt="Haze">
+            <img *ngSwitchCase = "state == 'Smoke' " 
+            src="../../../assets/svg icons/smoke.svg" alt="Smoke">
             <img *ngSwitchCase = "state === 'Storm' || state === 'Thunderstorm'" 
             src="../../../assets/svg icons/Thunderstrom.svg" alt="Thunderstrom">
             <img *ngSwitchCase = "state == 'Drizzle' || state == 'Mist'" 
@@ -45,5 +46,15 @@
           </section>
           <button class="add-city-btn " *ngIf="addMode" (click)="addCity(name, country  )">ADD CITY +</button>  
 </section>
+
+<!-- <div *ngIf="cityAdded" class="city-added-note">
+  <h5 class="add-success-text">City has been successfully added!</h5>
+  <svg viewBox="0 0 50 50" height="5rem">
+    <circle cx="25" cy="25" r="25" fill="#25ae88"/>
+    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+          stroke-width="2"
+          d="M38 15L22 33l-10-8"/>
+  </svg>
+</div> -->
 
 <app-error [message] = "errorMessage"></app-error>

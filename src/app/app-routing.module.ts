@@ -9,9 +9,9 @@ import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'add', component: AddCityComponent, canActivate: [AuthGuard]},
-  { path: 'details/:city/:country', component: DetailsComponent, canActivate: [AuthGuard]}
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { animation: 'isLeft' }},
+  { path: 'add', component: AddCityComponent, canActivate: [AuthGuard], data: { animation: 'isAdd' }},
+  { path: 'details/:city/:country', component: DetailsComponent, canActivate: [AuthGuard] , data: {animation: 'isRight'}}
 ];
 
 @NgModule({

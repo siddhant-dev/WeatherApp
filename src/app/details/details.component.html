@@ -41,16 +41,18 @@
               <div class="header-container">
                 <div class="today-container">
                     <div class="today-conditons">
-                        <span class="temp-text">25</span>
-                        <span class="temp-state">Clear</span>
+                        <span class="temp-text">{{currentTemp}}°C</span>
+                        <span class="temp-state">{{state}}</span>
                     </div>
                     <div class="humid-wind-container">
                         <div class="hum-container">
-                            <span class="hum">Humidity:  50%{{hum}}</span>
+                            <span class="hum">Humidity:  {{hum}}%</span>
                         </div>
                         
                         <div class="wind-container">
-                            <span class="wind">Wind:  10{{wind}}Km/h</span>
+                            <span class="wind">Wind:  {{wind}}Km/h | <i class="material-icons">
+                              navigation
+                              </i> {{deg | windDirection}}</span>
                         </div>
                     </div>
                   </div>
@@ -63,28 +65,28 @@
               </div>
           </section>
           <main class="body-container">
-              <section class="forcast-container">
-                   <div class="day-container">
-                      <span class="day-text" >Mon</span>
+              <section class="forcast-container" *ngIf = "forcast">
+                   <div class="day-container" *ngFor = "let d of forcast">
+                      <span class="day-text" >{{d.day}}</span>
                       <div class="weather-icon" [ngSwitch]="true">
-                        <img *ngSwitchCase="state == 'Sunny'|| state == 'Clear'" src="../../../assets/svg icons/Sunny.svg" alt="sunny">
-                        <img *ngSwitchCase = "desc == 'overcast clouds' || desc == 'scattered clouds' || 
-                        desc == 'broken clouds'" src = "../../../assets/svg icons/Scattered Clouds.svg" alt="Clouds">
-                        <img *ngSwitchCase = "desc == 'few clouds' || desc == 'cloudy'" 
+                        <img *ngSwitchCase="d.state == 'Sunny'|| d.state == 'Clear'" src="../../../assets/svg icons/Sunny.svg" alt="sunny">
+                        <img *ngSwitchCase = "d.state == 'Clouds'" 
                         src="../../../assets/svg icons/few clouds.svg" alt="Clouds" >
-                        <img *ngSwitchCase = "state == 'Fog' || state == 'Haze' || state == 'Smoke' " 
+                        <img *ngSwitchCase = "d.state == 'Fog' || d.state == 'Haze'" 
                         src="../../../assets/svg icons/mist.svg" alt="Haze">
-                        <img *ngSwitchCase = "state === 'Storm' || state === 'Thunderstorm'" 
+                        <img *ngSwitchCase = "d.state == 'Smoke'" 
+                        src="../../../assets/svg icons/mist.svg" alt="Smoke">
+                        <img *ngSwitchCase = "d.state === 'Storm' || d.state === 'Thunderstorm'" 
                         src="../../../assets/svg icons/Thunderstrom.svg" alt="Thunderstrom">
-                        <img *ngSwitchCase = "state == 'Drizzle' || state == 'Mist'" 
+                        <img *ngSwitchCase = "d.state == 'Drizzle' || d.state == 'Mist'" 
                         src="../../../assets/svg icons/Light Rain.svg" alt="Light Rain">
-                        <img *ngSwitchCase = "state == 'Rain'" 
+                        <img *ngSwitchCase = "d.state == 'Rain'" 
                          src="../../../assets/svg icons/Rain.svg" alt="Rain">
-                         <img *ngSwitchCase = "state == 'Snow' || state == 'Hail'" src="../../../assets/svg icons/Snow.svg" alt="Snow">
+                         <img *ngSwitchCase = "d.state == 'Snow' || d.state == 'Hail'" src="../../../assets/svg icons/Snow.svg" alt="Snow">
                     
                     </div>
-                    <span class="day-temp">34</span>
-                    <span class="day-state">Haze</span>
+                    <span class="day-temp">{{d.temp}}° C</span>
+                    <span class="day-state">{{d.desc}}</span>
 
                   </div>
               </section>

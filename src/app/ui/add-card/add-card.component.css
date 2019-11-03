@@ -1,0 +1,30 @@
+.add-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    justify-items: center;
+    padding: 2rem;
+    margin: 3rem;
+    margin-top: 4 rem;
+    width: 20rem;
+    height: 31rem;
+    cursor: pointer;
+    background: linear-gradient(180deg, #408797 0%, #091C1F 100%);
+    color: white;
+    border-radius: 1.75rem;
+    animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
+  }
+
+  .image{
+    /* margin-top: 2rem; */
+    min-height: auto; 
+  }
+
+  .city-name{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }

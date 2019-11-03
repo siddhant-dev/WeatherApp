@@ -11,6 +11,11 @@
     margin: 4rem;
 }
 
+.material-icons{
+  /* margin-top: 8rem; */
+  transform: rotate(25deg);
+}
+
 .back__button {
     position: absolute;
     top: 3rem;
@@ -29,7 +34,7 @@
     z-index: 3;
     justify-items: center;
     /* opacity: 0; */
-    animation: slideup 1s ease-out 300ms, fadein 1.25s ease-out 300ms forwards;
+    /* animation: slideup 1s ease-out 300ms, fadein 1.25s ease-out 300ms forwards; */
   }
 
   .card-container{
@@ -120,6 +125,8 @@
     letter-spacing: 0.2rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    display: inline-flex;
+    vertical-align: middle;
     /* margin: 2rem; */
   }
 
@@ -129,14 +136,6 @@
       align-content: center;
       padding-top: 10%;
       text-align: center;
-  }
-
-  .city-name{
-    /* background: transparent;
-    border-radius: 5px;
-    height: 5px;
-    box-shadow: 0 3rem 0 0 #ffffff; */
-
   }
 
   .city{
@@ -170,6 +169,8 @@
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
+      /* align-content: space-around; */
+      margin: 2rem;
   }
 
   .day-text{
@@ -198,7 +199,7 @@
   .day-state{
     font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     justify-self: center;
     color: #fff;
     text-align: center;
@@ -233,5 +234,8 @@
     }
     .main-card{
         width: 90%;
+    }
+    .day-container{
+      margin: 1rem;
     }
 }

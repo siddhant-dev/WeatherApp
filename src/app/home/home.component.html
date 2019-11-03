@@ -1,3 +1,4 @@
 <div class="main__container">
-  <app-weather-card *ngFor="let city of cities" [city]="city" [addMode]="false"></app-weather-card>
+  <app-weather-card *ngFor="let city of cities" [city]="city" [addMode]="false" ></app-weather-card>
+  <app-add-card routerLink = "/add"></app-add-card>
 </div>

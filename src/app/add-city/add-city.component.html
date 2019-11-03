@@ -15,7 +15,7 @@
 
              </div>
              <div class="search-map" *ngIf="latitude">
-                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [styles]="mapStyle">
+                <agm-map [latitude]="latitude" [longitude]="longitude" [(zoom)]="zoom" [styles]="mapStyle">
                     <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
                     (dragEnd)="markerDragEnd($event)" [iconUrl]=iconStyle>
                 </agm-marker>

@@ -87,7 +87,7 @@ agm-map{
     flex-flow: column;
     justify-content: space-between;      
     height: 100%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
   }
   .text-btn{
     margin-left: 2px;
