@@ -96,6 +96,7 @@ export const rightSlide = animation([
       animate('600ms ease', style({ right: '0' }))
     ])
   ]),
+    query(':enter', animateChild()),
 ]);
 
 export const slider = trigger('routeAnimations', [

@@ -48,10 +48,10 @@
                             <span class="head">Welcome Back</span>
                             <span class="loggedUser">{{ user.displayName }}</span>
                         </div>
-                        <button class="btn2" routerLink="/home">Click to Continue</button>
-                        <br>
-                        <span class="appInfo">Or</span>
-                        <button class="btn2" (click)="auth.signOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="button is-light" routerLink="/home">Click to Continue</button>
+                        
+                        <span class="or">Or</span>
+                        <button class="button is-dark" (click)="auth.signOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Sign Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                             
                     </ng-template>

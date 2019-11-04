@@ -2,16 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-html{
-  height: 100%;
-}
-
-body{
+html, body{
     background: linear-gradient(180deg, #415F7A 0%, #051620 100%);
     width: 100%;
     height: 100%;
+    margin: 0;
     overflow: auto;
-    background-repeat: no-repeat;
 }
 
 @keyframes slideup {

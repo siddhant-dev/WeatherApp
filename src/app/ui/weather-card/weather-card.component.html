@@ -1,4 +1,4 @@
-<section class="weather-card" (click) = "openDetails()">
+<section class="weather-card" (click) = "openDetails()" *ngIf="!cityAdded && name">
     <span class="city-name">{{name}}, {{country}}</span>
     <div class="weather-icon" [ngSwitch]="true">
             <img *ngSwitchCase="state == 'Sunny'|| state == 'Clear'" src="../../../assets/svg icons/Sunny.svg" alt="sunny">
@@ -47,7 +47,7 @@
           <button class="add-city-btn " *ngIf="addMode" (click)="addCity(name, country  )">ADD CITY +</button>  
 </section>
 
-<!-- <div *ngIf="cityAdded" class="city-added-note">
+<div *ngIf="cityAdded" class="city-added-note">
   <h5 class="add-success-text">City has been successfully added!</h5>
   <svg viewBox="0 0 50 50" height="5rem">
     <circle cx="25" cy="25" r="25" fill="#25ae88"/>
@@ -55,6 +55,6 @@
           stroke-width="2"
           d="M38 15L22 33l-10-8"/>
   </svg>
-</div> -->
+</div>
 
 <app-error [message] = "errorMessage"></app-error>

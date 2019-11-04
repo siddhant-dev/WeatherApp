@@ -46,9 +46,28 @@
     justify-content: center;
     min-height: 100%;
 }
+.head{
+    text-align  : center;
+    color: white    ;
+    display: block;
+    font-family: Montserrat;
+
+}
+.is-dark{
+    background-color: rgb(179, 38, 38);;
+}
+
+.is-dark:hover{
+    background-color: red
+}
+
+.is-light:hover{
+    background-color: #82B4DC;    
+    color: white;   
+}
 
 .loggedUser{
-    animation: fade 1s ease-in-out;
+    animation: fadein    1s ease-in-out;
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -80,6 +99,22 @@
 
     color: #fff;
 
+}
+.or{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.8em;
+    line-height: 3em;
+    /* margin-top: 2em; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: #fff;
 }
 
 .loginSide{

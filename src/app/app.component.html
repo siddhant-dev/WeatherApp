@@ -30,6 +30,13 @@
                   </div>
               
                   <div class="navbar-end">
+                    <div class="navbar-item" *ngIf="pwa.promptEvent">
+                        <div class="buttons">
+                          <a class="button is-black" (click) = "installPwa()">
+                            <strong>Install App</strong>
+                          </a>
+                        </div>
+                      </div>
                     <div class="navbar-item">
                       <div class="buttons">
                         <a class="button is-black" (click) = "auth.signOut()">
