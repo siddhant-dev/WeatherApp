@@ -96,6 +96,7 @@ export const rightSlide = animation([
       animate('600ms ease', style({ right: '0' }))
     ])
   ]),
+    query(':leave', animateChild()),
     query(':enter', animateChild()),
 ]);
 
