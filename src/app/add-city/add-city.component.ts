@@ -36,7 +36,7 @@ export class AddCityComponent implements OnInit {
     }
 };
 
-  @ViewChild ('search' , {static: false})
+  @ViewChild('search')
   public searchElementRef: ElementRef;
 
   ngOnInit() {
