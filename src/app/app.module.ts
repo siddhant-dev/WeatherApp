@@ -20,6 +20,7 @@ import { WindDirectionPipe } from './pipes/wind-direction.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { environment } from '../environments/environment';
       libraries: ['places']
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

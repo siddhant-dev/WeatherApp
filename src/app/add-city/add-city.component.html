@@ -6,7 +6,7 @@
                     <div class="input-wrapper">
                             <input type="text" (keydown.enter)="$event.preventDefault()" placeholder="Search Cities" 
                             autocorrect="on" autocapitalize="on" spellcheck="on" #search class="search-input">
-                            <button class="search-city-btn" (click)="setCurrentLocation()" >
+                            <button class="search-city-btn" (click)="setCurrentLocation()" #search>
                                     <span class="material-icons">
                                             my_location
                                             </span> <span class="text-btn">Locate Me</span>
